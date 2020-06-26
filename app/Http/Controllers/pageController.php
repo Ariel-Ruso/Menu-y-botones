@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App;
+use User;
 
 class pageController extends Controller
 {
@@ -29,7 +30,8 @@ class pageController extends Controller
     }
    
   public function mostrar (){
-    	$users= App\Usuario::paginate(3);
+        $users= App\Usuario::all();
+    	//$users= App\Usuario::paginate(3);
     	return view ('admin/usuarios/mostrar', compact ('users'));
     }
 
