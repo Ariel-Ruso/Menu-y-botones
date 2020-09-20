@@ -175,11 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        /*mis providers
-        */
-        Collective\Html\HtmlServiceProvider::class,
-        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
-        
+       
 
     ],
 

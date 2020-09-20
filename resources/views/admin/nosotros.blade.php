@@ -2,10 +2,7 @@
 
 @section('title', 'Nosotros somos')
 
-
-
 <h1> Equipo de trabajo </h1><br>
-
 
 	@foreach  ($equipo as $item)
 

@@ -9,11 +9,11 @@
 
 		<form>
 			<a href="{{route('bienvenidos')}}" class="btn btn-primary">Inicio</a>
-			<a href="{{ route ('mostrar_usuarios') }}" class="btn btn-primary">Mostrar Usuarios</a>
+			<a href="{{ route ('mostrarTodos') }}" class="btn btn-primary">Mostrar Usuarios</a>
+			<a href="{{ route ('crear_usuario') }}" class="btn btn-primary">Crear usuario</a>
 			<a href="{{route('nosotros')}}" class="btn btn-primary">Nosotros</a>
 			
-			
-	</form>
+		</form>
 
 
 </head>

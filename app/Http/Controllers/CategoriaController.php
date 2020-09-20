@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Paciente;
+use App\Categoria;
 use Illuminate\Http\Request;
 
-class PacienteController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PacienteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Paciente  $paciente
+     * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function show(Paciente $paciente)
+    public function show(Categoria $categoria)
     {
         //
     }
@@ -52,10 +52,10 @@ class PacienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Paciente  $paciente
+     * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Paciente $paciente)
+    public function edit(Categoria $categoria)
     {
         //
     }
@@ -64,10 +64,10 @@ class PacienteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Paciente  $paciente
+     * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Paciente $paciente)
+    public function update(Request $request, Categoria $categoria)
     {
         //
     }
@@ -75,10 +75,10 @@ class PacienteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Paciente  $paciente
+     * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Paciente $paciente)
+    public function destroy(Categoria $categoria)
     {
         //
     }

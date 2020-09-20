@@ -2,40 +2,31 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('bienvenidos');
 })->name ('bienvenidos');
 
-Route::get ('/matem', 'pagecontroller@matem')->name('matem');
+//abm users
 
-Route::post ('/', 'pagecontroller@nuevouser')->name('usuario_nuevo');
+Route::post ('usuarios/crear', 'usuarioController@crear_usuario2')->name('crear_usuario2');
 
-Route::get ('admin/usuarios/mostrar', 'pagecontroller@mostrar')->name('mostrar_usuarios');
+Route::get ('usuarios/crear', 'usuarioController@crear_usuario')->name('crear_usuario');
 
-Route::get ('/admin/usuarios/detalle/{id}', 'pagecontroller@detalle')->name('detalle_usuario');
+Route::get ('usuarios/mostrarTodos', 'usuarioController@mostrarTodos')->name('mostrarTodos');
 
-Route::get ('admin/usuarios/editar/{id}', 'pagecontroller@editar')->name('usuarios_editar');
+Route::get ('usuarios/detalle_usuario/{id}', 'usuarioController@detalle_usuario')->name('detalle_usuario');
 
-Route::put ('admin/usuarios/editar/{id}', 'pagecontroller@actualizar')->name('actualizar_usuario');
+
+Route::get ('usuarios/editar_usuario/{id}', 'usuarioController@editar_usuario')->name('editar_usuario');
+
+Route::put ('usuarios/editar/{id}', 'pagecontroller@actualizar')->name('actualizar_usuario');
 
 Route::delete('/{id}', 'pagecontroller@eliminar')->name('usuarios_eliminar');
 
 Route::get('admin/nosotros', function (){
-
-	$equipo= ['Ariel','Jose', 'Pablo', 'Cris'];
+	$equipo= ['Claudio', 'Ariel'];
 	return view ('admin/nosotros', compact('equipo'));
-
 })->name ('nosotros');
 
 

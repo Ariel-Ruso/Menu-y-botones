@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddMedicosTable extends Migration
+class CreateProductosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class AddMedicosTable extends Migration
      */
     public function up()
     {
-        Schema::create('medicos', function (Blueprint $table) {
-             $table->id();
-            $table->string('apellido');
-            $table->integer('matricula');
+        Schema::create('productos', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class AddMedicosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medicos');
+        Schema::dropIfExists('productos');
     }
 }

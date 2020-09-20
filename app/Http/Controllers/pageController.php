@@ -8,34 +8,37 @@ use User;
 
 class pageController extends Controller
 {
-    public function nuevouser (Request $request){
+    public function crear_usuario(){
+        return view ('usuarios.crear');
+    }
+    
+    public function crear_usuario2 (Request $request){
    	
     	$request-> validate ([
-            'nombre' => 'required',
-            'apellido' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'Nombre' => 'required',
+            'Apellido' => 'required',
+            'Correo' => 'required',
+            'Rol' => 'required',
         ]);
         
         $new_us = new App\Usuario;
-        $new_us->nombre = $request->nombre;
-        $new_us->apellido = $request->apellido;
-        $new_us->password = $request->password;
-        $new_us->email = $request->email;
-
+        $new_us->Nombre = $request->Nombre;
+        $new_us->Apellido = $request->apellido;
+        $new_us->Rol = $request->rol;
+        $new_us->Correo = $request->correo;
         $new_us->save();
 
-        return back()->with('mensaje', 'Agregado correctamente');
+        return back()->with('mensaje', 'Usuario agregado correctamente');
         
     }
    
   public function mostrar (){
         $users= App\Usuario::all();
     	//$users= App\Usuario::paginate(3);
-    	return view ('admin/usuarios/mostrar', compact ('users'));
+    	return view ('usuarios/mostrar', compact ('users'));
     }
 
-    public function detalle($id){
+    public function detalle_usuario($id){
     	$users= App\Usuario::FindOrFail($id);
 		return view ('admin/usuarios/detalle', compact('users'));
     }  
@@ -68,9 +71,5 @@ class pageController extends Controller
         return back()->with('mensaje', 'Eliminado correctamente');        
     }
 
-
-    public function matem(){
-        return view('matem');
-    }
 
 }

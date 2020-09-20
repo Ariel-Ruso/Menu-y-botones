@@ -173,69 +173,7 @@
             ],
             "time": "2019-12-14T13:04:14+00:00"
         },
-        {
-            "name": "cviebrock/eloquent-sluggable",
-            "version": "7.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-                "reference": "4e5a961965f92ef0e3c10ec4ebc073a6ab6bc4f0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/4e5a961965f92ef0e3c10ec4ebc073a6ab6bc4f0",
-                "reference": "4e5a961965f92ef0e3c10ec4ebc073a6ab6bc4f0",
-                "shasum": ""
-            },
-            "require": {
-                "cocur/slugify": "^4.0",
-                "illuminate/config": "^7.0",
-                "illuminate/database": "^7.0",
-                "illuminate/support": "^7.0",
-                "php": "^7.2.5"
-            },
-            "require-dev": {
-                "limedeck/phpunit-detailed-printer": "^5.0",
-                "mockery/mockery": "^1.2.3",
-                "orchestra/database": "^5.0",
-                "orchestra/testbench": "^5.0",
-                "phpunit/phpunit": "^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Cviebrock\\EloquentSluggable\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Cviebrock\\EloquentSluggable\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Colin Viebrock",
-                    "email": "colin@viebrock.ca"
-                }
-            ],
-            "description": "Easy creation of slugs for your Eloquent models in Laravel",
-            "homepage": "https://github.com/cviebrock/eloquent-sluggable",
-            "keywords": [
-                "eloquent",
-                "eloquent-sluggable",
-                "laravel",
-                "lumen",
-                "slug",
-                "sluggable"
-            ],
-            "time": "2020-04-07T03:18:54+00:00"
-        },
+       
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "v0.1.1",
