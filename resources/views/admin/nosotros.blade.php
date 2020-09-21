@@ -1,8 +1,11 @@
-@extends ('admin.template.main')
+@extends ('layouts.app')
 
 @section('title', 'Nosotros somos')
 
-<h1> Equipo de trabajo </h1><br>
+@section('contents')
+
+
+<h1 align= "center"> Equipo de trabajo </h1><br>
 
 	@foreach  ($equipo as $item)
 
@@ -11,4 +14,4 @@
 	@endforeach
 
 
-
+@endsection

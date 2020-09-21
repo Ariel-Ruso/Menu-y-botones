@@ -1,5 +1,7 @@
 @extends ('layouts.app') 
 
+@section ('title', 'Crear usuarios')
+
 @section('contents')
 
 <div class="container">
@@ -33,21 +35,33 @@
                     />
                     <input
                       type="text"
-                      name="rol"
-                      placeholder="Rol"
-                      class="form-control mb-2"
-                    />
-                    <input
-                      type="text"
                       name="correo"
                       placeholder="Correo"
                       class="form-control mb-2"
                     />
-                    @error('nombre')
-                      <div class="alert alert-danger">
-                          Nombre es obligatorio
+                    
+                    <!-- <input
+
+                      type="text"
+                      name="rol"
+                      placeholder="Rol" -->
+
+                      <div class="form-row align-items-center">
+                        <div class="col-auto my-1">
+                          <label class="mr-sm-2" for="inlineFormCustomSelect">Rol</label>
+                          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name= "rol">
+                            <option selected>Elegir...</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Encargado">Encargado</option>
+                            <option value="Vendedor">Vendedor</option>
+                            <option value="Almacen">Almacen</option>
+                          </select>
+                          <br>
+
                       </div>
-                    @enderror
+                      
+
+                                        
                     <button class="btn btn-primary btn-block" type="submit">Agregar</button>
                   </form>
                 </div>

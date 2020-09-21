@@ -1,15 +1,13 @@
 @extends ('layouts.app') 
-
+@section ('title', 'Mostrar usuarios')
 @section ('contents')
-
-<h1 align="center"> Usuarios</h1>
+<h1 align="center"> Usuarios Disponibles</h1>
 
 @if (session('mensaje'))
   <div class="alert alert-success">
     {{ session('mensaje') }}
   </div>
 @endif
-
 
 <form>
   <br><br>
@@ -34,15 +32,14 @@
           {{ $item->Nombre }}
         </a>
       </td>
-      
       <td>{{ $item->Apellido }}</td>
       <td>{{ $item->Correo }}</td>
-      <td {{ $item->Rol }}</td>
+      <td>{{ $item->Rol }}</td>
       <td>
         <a href="{{ route ('editar_usuario', $item) }}" class="btn btn-warning btn s-m">Editar 
         </a>
 
-        <form action=" {{ route('usuarios_eliminar', $item) }} " method="Post" class="d-inline" >
+        <form action=" {{ route('eliminar_usuario', $item) }} " method="Post" class="d-inline" >
             @method ('DELETE')
             @csrf
             <button class="btn btn-danger btn s-m" type="submit" > Eliminar         
@@ -60,3 +57,5 @@
 {{ $users->links() }}
  
 </form>
+
+@endsection

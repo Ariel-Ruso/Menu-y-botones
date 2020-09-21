@@ -1,37 +1,68 @@
-@extends ('admin.template.main')
+@extends ('layouts.app') 
 
 @section ('title', 'Edicion de usuarios')
 
 @section ('contents')
 
-<h1 align="center">Editamos Usuario </h1>
+<h1 align="center">Editar Usuario </h1>
 
-	@if (session('mensaje'))
-  		<div class="alert alert-success">
-    		{{ session('mensaje') }}
-  		</div>
-	@endif
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>Usuario # {{$users-> id }}</span>
+                </div>
 
-<form method="post" action=" {{ route('actualizar_usuario', $users->id) }}">
-	@method ('put')
-	@csrf
+                <div class="card-body">     
+                  @if ( session('mensaje') )
+                    <div class="alert alert-success">{{ session('mensaje') }}</div>
+                  @endif
 
-  @error('email')
-    <div class="alert alert-danger">
-        Los campos son obligatorios
+                  <form  action="{{ route('actualizar_usuario', $users->id) }}" method="POST">
+                    @method ('put')
+	                  @csrf
+                    <input
+                      type="text"
+                      name="nombre"
+                      placeholder="Nombre"
+                      class="form-control mb-2"
+                    />                  
+                    
+                    <input
+                      type="text"
+                      name="apellido"
+                      placeholder="Apellido"
+                      class="form-control mb-2"
+                    />
+                    <input
+                      type="text"
+                      name="correo"
+                      placeholder="Correo"
+                      class="form-control mb-2"
+                    />
+                    
+                      <div class="form-row align-items-center">
+                        <div class="col-auto my-1">
+                          <label class="mr-sm-2" for="inlineFormCustomSelect">Rol</label>
+                          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name= "rol">
+                            <option selected>Elegir...</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Encargado">Encargado</option>
+                            <option value="Vendedor">Vendedor</option>
+                            <option value="Almacen">Almacen</option>
+                          </select>
+                          <br>
+                      </div>
+                                        
+                    <button class="btn btn-primary btn-block" type="submit">Editar</button>
+                  </form>
+                </div>
+            </div>
+        </div>
     </div>
-  @enderror
+</div>
 
-  
-  <input type="text" name="nombre" placeholder="Nombre" class="form-control mb-2" value= "{{ ($users->nombre) }}" >
+@endsection
 
-  <input type="text" name="apellido" placeholder="Apellido" class="form-control mb-2" value= "{{ ($users->apellido) }}">
-
-  <input type="text" name="password" placeholder="Password" class="form-control mb-2" value= "{{ ($users->password) }}">
-
-  <input type="text" name="email" placeholder="E mail" class="form-control mb-2" value= "{{ ($users->email) }}">
-
-  <button class="btn btn-warning" type="submit">Editar Usuario </button>
-
-</form>
 

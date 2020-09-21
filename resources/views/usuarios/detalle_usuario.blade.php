@@ -1,14 +1,33 @@
 @extends ('layouts.app') 
 
+@section ('title', 'Detalles')
+
 @section ('contents')
 
-<h1 align="center"> Detalles de Usuario </h1><td>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+				<div class="card-header d-flex justify-content-between align-items-center">
+    				<span><h2>Detalles de Usuario<h2></span>
+				</div>
+				<div class="card-body">    
 
-	<h4> id: {{ $users->id }} </h4>
-	<h4> usuario: {{ $users->nombre }} </h4>
-	<h4> apellido: {{ $users->apellido }} </h4>
-	<h4> correo: {{ $users->correo }} </h4>
+				 Id: {{ $users->id }} <br>
+				 Usuario: {{ $users->Nombre }} <br>
+				 Apellido: {{ $users->Apellido }} <br>
+				 Correo: {{ $users->Correo }} <br>
+				 Rol: {{ $users->Rol }} <br>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 	
+@endsection
 
 
 
