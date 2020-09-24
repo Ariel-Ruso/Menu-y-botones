@@ -51,14 +51,24 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('nosotros')}}">Nosotros</a>
                 </li>
+                
             </ul>
             <!-- Links -->
 
-            <form class="form-inline">
-                <div class="md-form my-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
-                </div>
-            </form>
+            <nav class="navbar navbar-light float-right">
+                <form class="form-inline">
+                    <input  name="buscarpor" 
+                            class="form-control mr-sm-2" 
+                            type="search" 
+                            placeholder="Buscar User por nombre" 
+                            aria-label="Search"
+                        >
+                    <button  class="btn btn-outline-success my-2 my-sm-0" 
+                                type="submit">
+                                Buscar
+                    </button>
+                </form>
+            </nav>
         </div>
         <!-- Collapsible content -->
 

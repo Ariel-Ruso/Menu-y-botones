@@ -14,7 +14,11 @@ class CreateProductosTable extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->id();
+            $table->id()->unique();
+            $table->String('nombre');
+            $table->String('detalle');
+            $table->unsignedInteger('categoria_id');//link a categoria
+            $table->timestamp('fecha');
             $table->timestamps();
         });
     }

@@ -11,6 +11,8 @@ Route::get('/', function () {
 
 Route::post ('usuarios/crear', 'usuarioController@crear_usuario2')->name('crear_usuario2');
 
+Route::get ('roles', 'RolController@mostrar')->name('roles');
+
 Route::get ('usuarios/crear_usuario', 'usuarioController@crear_usuario')->name('crear_usuario');
 
 Route::get ('usuarios/mostrarTodos', 'usuarioController@mostrarTodos')->name('mostrarTodos');
@@ -30,4 +32,5 @@ Route::get('admin/nosotros', function (){
 	return view ('admin/nosotros', compact('equipo'));
 })->name ('nosotros');
 
+Route::get ('roles', 'RolController@mostrar')->name('roles');
 

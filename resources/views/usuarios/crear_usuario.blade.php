@@ -20,6 +20,27 @@
 
                   <form  action="{{route('crear_usuario2')}}" method="POST">
                     @csrf
+
+                    @error('nombre')
+                      <div class="alert alert-success">
+                          Nombre obligatorio
+                      </div>
+                    @enderror
+                    @error('apellido')
+                      <div class="alert alert-success">
+                          Apellido obligatorio
+                      </div>
+                    @enderror
+                    @error('correo')
+                      <div class="alert alert-success">
+                          Correo obligatorio
+                      </div>
+                    @enderror
+                    @error('rol')
+                      <div class="alert alert-success">
+                          Rol obligatorio
+                      </div>
+                    @enderror
                     <input
                       type="text"
                       name="nombre"
@@ -40,30 +61,26 @@
                       class="form-control mb-2"
                     />
                     
-                    <!-- <input
-
-                      type="text"
-                      name="rol"
-                      placeholder="Rol" -->
-
                       <div class="form-row align-items-center">
                         <div class="col-auto my-1">
                           <label class="mr-sm-2" for="inlineFormCustomSelect">Rol</label>
                           <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name= "rol">
-                            <option selected>Elegir...</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Encargado">Encargado</option>
-                            <option value="Vendedor">Vendedor</option>
-                            <option value="Almacen">Almacen</option>
+                            <option selected>
+                                Elegir...
+                            </option>
+                            @foreach($roles as $item)
+                              
+                              <option value= "{{$item->id}}" >
+                                 {{ $item->nombre }}
+                              </option>
+                              
+                            @endforeach
                           </select>
                           <br>
-
-                      </div>
-                      
-
-                                        
+                      </div>                               
                     <button class="btn btn-primary btn-block" type="submit">Agregar</button>
                   </form>
+               
                 </div>
             </div>
         </div>
