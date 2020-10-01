@@ -127,7 +127,8 @@
             <!-- Links -->
 
             <nav class="navbar navbar-light float-right">
-                <form   class="form-inline" 
+                <form   class="form-inline"
+                        action="{{ route('buscaPor') }}"
                         >
                     <input  name="buscarPorNombre" 
                             class="form-control mr-sm-2" 

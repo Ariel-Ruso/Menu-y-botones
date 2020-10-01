@@ -38,7 +38,7 @@
           {{ $item->cantidad }}
         </td>
         <td>
-          {{ $item->precio }}
+         $  {{ $item->precio }}
         </td>
         <td>
           {{ $cates[ ($item->categorias_id)-1 ]->nombre }}

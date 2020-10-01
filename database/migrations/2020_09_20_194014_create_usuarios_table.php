@@ -16,6 +16,7 @@ class CreateUsuariosTable extends Migration
             $table->string('correo');
             $table  ->timestamp('email_verified_at')
                     ->nullable();
+            $table->string('direccion');                    
             $table->foreignId('rols_id')
                     ->references('id')
                     ->on('rols')

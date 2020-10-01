@@ -48,7 +48,7 @@ Route::get ('usuarios/crear_usuario', 'usuarioController@crear_usuario')->name('
 
 Route::get ('usuarios/mostrarTodos', 'usuarioController@mostrarTodos')->name('mostrarTodos');
 
-//Route::get ('usuarios/buscaXnombre', 'usuarioController@buscaXnombre')->name('buscaXnombre');
+Route::get ('usuarios/buscaPor', 'usuarioController@buscaPor')->name('buscaPor');
 
 Route::get ('usuarios/detalle_usuario/{id}', 'usuarioController@detalle_usuario')->name('detalle_usuario');
 

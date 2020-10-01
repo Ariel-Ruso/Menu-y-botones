@@ -17,6 +17,7 @@
         <th scope="col">#Id</th>
         <th scope="col">Nombre</th>
         <th scope="col">Apellido</th>
+        <th scope="col">Direccion</th>
         <th scope="col">Correo</th>
         <th scope="col">Rol</th>
         <th scope="col">Acciones</th>
@@ -34,6 +35,9 @@
         </td>
         <td>
           {{ $item->apellido }}
+        </td>
+        <td>
+          {{ $item->direccion }}
         </td>
         <td>
           {{ $item->correo }}

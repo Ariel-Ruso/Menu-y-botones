@@ -8,19 +8,33 @@ use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
+    
     public function buscaPor(Request $request){
         
-        //$nombre= $request->get('buscarPorNombre');  
-        //$apellido= $request->get('buscaPorApellido');
+        $nombre= $request->get('buscarPorNombre');  
+        $apellido= $request->get('buscarPorApellido');
+        //dd($nombre);
+        $roles= Rol::all();
+        
+    
+        //invoco funcion scopeNombre
+        $users= Usuario::nombre($nombre)->apellido($apellido)->paginate(5);
 
-        //$users= Usuario::Nombre ($nombre)->apellido($apellido)->paginate(5);
+        //https://solibeth.net/laravel-6-22-filtros-de-busqueda
+        //$buscar= $request->get('buscarPor');
+        //dd ($buscar);
+        //$tipo= $request->get('tipo');
+        //$users= Usuario::buscaPor($tipo, $buscar)->paginate(5);
 
-        $buscar= $request->get('buscarPor');
-        dd ($buscar);
-        $tipo= $request->get('tipo');
-        $users= Usuario::buscaPor($tipo, $buscar)->paginate(5);
+       return view ('usuarios.mostrarTodos', compact ('users', 'roles'));
+    }
 
-       return view ('usuarios.detalle_usuario', compact ('users'));
+    public function mostrarTodos (){
+
+        $users= Usuario::paginate(5);
+        $roles= Rol::all();
+        //dd( $users, $roles);
+    	return view ('usuarios.mostrarTodos', compact ('users', 'roles'));
     }
 
     public function crear_usuario(){
@@ -35,6 +49,7 @@ class UsuarioController extends Controller
     	$request-> validate ([
             'nombre' => 'required',
             'apellido' => 'required',
+            'direccion' => 'required',
             'correo' => 'required',
             'rols_id' => 'required',
         ]);
@@ -42,6 +57,7 @@ class UsuarioController extends Controller
         $new_us = new Usuario;
         $new_us->nombre = $request->nombre;
         $new_us->apellido = $request->apellido;
+        $new_us->direccion = $request->direccion;
         $new_us->correo = $request->correo;
         $new_us->rols_id = $request->rols_id;
         $new_us->save();
@@ -49,14 +65,7 @@ class UsuarioController extends Controller
         
     }
 
-    public function mostrarTodos (){
-
-        $users= Usuario::paginate(5);
-        $roles= Rol::all();
-        //dd( $users, $roles);
-    	return view ('usuarios.mostrarTodos', compact ('users', 'roles'));
-    }
-
+   
     public function detalle_usuario($id){
 
         $users= Usuario::FindOrFail($id);

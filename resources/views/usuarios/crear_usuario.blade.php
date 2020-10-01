@@ -41,6 +41,11 @@
                             Correo obligatorio
                         </div>
                       @enderror
+                      @error('direccion')
+                        <div class="alert alert-success">
+                            Direccion obligatoria
+                        </div>
+                      @enderror
                       @error('rols_id')
                         <div class="alert alert-success">
                             Rol obligatorio
@@ -58,6 +63,12 @@
                         type="text"
                         name="apellido"
                         placeholder="Apellido"
+                        class="form-control mb-2"
+                      />
+                      <input
+                        type="text"
+                        name="direccion"
+                        placeholder="Direccion"
                         class="form-control mb-2"
                       />
                       <input
