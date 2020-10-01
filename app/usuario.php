@@ -10,8 +10,28 @@ class Usuario extends Model
         'nombre', 'correo', 'apellido', 'rol'
     ];
 
-    public function categoria(){
-        //usuario pertenece a una categoria
-        return $this->belongsTo (Categoria::class); 
+    public function rol(){
+        //usuario pertenece a una Rol
+        return $this->belongsTo (Rol::class); 
     }
+/*
+    public function scopeNombre($query, $nombre) {
+    	if ($nombre) {
+    		return $query->where('nombre','like',"%$nombre%");
+    	}
+    }
+    
+    public function scopeApellido($query, $apellido) {
+    	if ($apellido) {
+    		return $query->where('apellido','like',"%$apellido%");
+    	}
+    }
+    */
+    public function scopeBuscarpor($query, $tipo, $buscar) {
+    	if ( ($tipo) && ($buscar) ) {
+    		return $query->where($tipo,'like',"%$buscar%");
+    	}
+    }
+
+
 }

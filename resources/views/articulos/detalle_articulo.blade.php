@@ -7,31 +7,22 @@
         <div class="col-md-8">
             <div class="card">
 				<div class="card-header d-flex justify-content-between align-items-center">
-    				<span><h2>Detalles de Usuario<h2></span>
+    				<span>
+                        <h2>Detalles de Articulo<h2>
+                    </span>
 				</div>
 				<div class="card-body">    
 
-				 Id: {{ $users->id }} <br>
-				 Usuario: {{ $users->nombre }} <br>
-				 Apellido: {{ $users->apellido }} <br>
-				 Correo: {{ $users->correo }} <br>
+				 Id: {{ $art->id }} <br>
+				 Nombre: {{ $art->nombre }} <br>
+				 Cantidad: {{ $art->cantidad }} <br>
+				 Precio: {{ $art->precio }} <br>
 				 <!-- traigo nombre de rol desde user -->
-				 Rol: {{ $roles[ ($users->rols_id)-1 ]->nombre }} <br>
+				 Categoria: {{ $cates[ ($art->categorias_id)-1 ]->nombre }} <br>
 
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-
-
-	
+</div>	
 @endsection
-
-
-
-
-
-
-
-

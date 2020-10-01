@@ -6,11 +6,19 @@ use App\Rol;
 class RolSeeder extends Seeder
 {
     public function run(){
-        Rol::truncate();
+        //Rol::truncate();
         
         $rol= new Rol();
         $rol->nombre= "Admin";
         $rol->save();
+
+        $rol= new Rol();
+        $rol->nombre= "Encargado";
+        $rol->save();
+
+        $rol= new Rol();
+        $rol->nombre= "Almacen";
+        $rol->save();      
 
         $rol= new Rol();
         $rol->nombre= "Vendedor";

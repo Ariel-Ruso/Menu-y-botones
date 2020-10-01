@@ -5,12 +5,27 @@ use App\Categoria;
 
 class CategoriaSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
     public function run()
     {
-        Categoria::truncate(); //no duplica datos
-        $categoria= new Categoria();
-        $categoria->nombre= "Cate 1";
-        $categoria->detalle= "1 categoria ";
-        $categoria-> save();
+        $cate= new Categoria();
+        $cate->nombre= "Electronica";
+        $cate->save();
+
+        $cate= new Categoria();
+        $cate->nombre= "Casa y Jardin";
+        $cate->save();
+
+        $cate= new Categoria();
+        $cate->nombre= "Ropa y Calzado";
+        $cate->save();
+
+        $cate= new Categoria();
+        $cate->nombre= "Salud y Belleza";
+        $cate->save();
     }
 }

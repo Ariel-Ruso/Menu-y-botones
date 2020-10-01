@@ -7,7 +7,38 @@ Route::get('/', function () {
     return view('bienvenidos');
 })->name ('bienvenidos');
 
-//abm users
+Route::get('QuienesSomos', function() {
+	return view('QuienesSomos');
+}
+)->name ('nosotros');
+
+//abm categorias
+
+Route::get ('categorias/crear_categoria', 'categoriaController@crear_categoria')->name('crear_categoria');
+
+Route::post ('categorias/crear_categoria2', 'categoriaController@crear_categoria2')->name('crear_categoria2');
+
+Route::get ('categorias/mostrarTodas', 'categoriaController@mostrarTodas')->name('mostrarTodas');
+
+Route::delete('categorias/{id}', 'categoriaController@eliminar_categoria')->name('eliminar_categoria');
+
+//abm articulos
+Route::delete('articulos/{id}', 'articuloController@eliminar_articulo')->name('eliminar_articulo');
+
+Route::get ('articulos/crear_articulo', 'articuloController@crear_articulo')->name('crear_articulo');
+
+Route::get ('articulos/mostrarTodos', 'articuloController@mostrarTodos')->name('mostrarTodosArt');
+
+Route::post ('articulos/crear_articulo2', 'articuloController@crear_articulo2')->name('crear_articulo2');
+
+Route::get ('articulos/detalle_articulo/{id}', 'articuloController@detalle_articulo')->name('detalle_articulo');
+
+Route::get ('articulos/editar_articulo/{id}', 'articuloController@editar_articulo')->name('editar_articulo');
+
+Route::put ('articulos/editar/{id}', 'articuloController@actualizar_articulo')->name('actualizar_articulo');
+
+
+//abm user
 
 Route::post ('usuarios/crear', 'usuarioController@crear_usuario2')->name('crear_usuario2');
 
@@ -17,6 +48,8 @@ Route::get ('usuarios/crear_usuario', 'usuarioController@crear_usuario')->name('
 
 Route::get ('usuarios/mostrarTodos', 'usuarioController@mostrarTodos')->name('mostrarTodos');
 
+//Route::get ('usuarios/buscaXnombre', 'usuarioController@buscaXnombre')->name('buscaXnombre');
+
 Route::get ('usuarios/detalle_usuario/{id}', 'usuarioController@detalle_usuario')->name('detalle_usuario');
 
 Route::delete('{id}', 'usuarioController@eliminar_usuario')->name('eliminar_usuario');
@@ -25,12 +58,6 @@ Route::get ('usuarios/editar_usuario/{id}', 'usuarioController@editar_usuario')-
 
 Route::put ('usuarios/editar/{id}', 'usuarioController@actualizar_usuario')->name('actualizar_usuario');
 
-
-
-Route::get('admin/nosotros', function (){
-	$equipo= ['Claudio', 'Ariel'];
-	return view ('admin/nosotros', compact('equipo'));
-})->name ('nosotros');
 
 Route::get ('roles', 'RolController@mostrar')->name('roles');
 
