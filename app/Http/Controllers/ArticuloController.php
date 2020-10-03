@@ -8,6 +8,19 @@ use Illuminate\Http\Request;
 
 class ArticuloController extends Controller
 {
+    public function buscaPorAr(Request $request){
+        //dd($request);
+        //$nombre= $request->get('buscarPorNombre');  
+        $buscar= $request->get('buscarPor');  
+        $tipo= $request->get('tipo');  
+        $cates= Categoria::all();
+        
+        //invoco funcion scopeNombre
+        $arts= Articulo::buscarPor($tipo, $buscar)->paginate(5);
+        //$arts= Articulo::where($categorias->id,'like',"1")->paginate(5);
+        return view ('articulos.mostrarTodos', compact ('arts', 'cates'));
+    }
+
     public function crear_articulo(){
         //$cates= new Categorias;
         $cates= Categoria::all();
@@ -38,8 +51,8 @@ class ArticuloController extends Controller
 
     public function mostrarTodos (){
        
+        //$arts= Articulo::paginate(5);
         $arts= Articulo::paginate(5);
-        $arts= Articulo::all();
         $cates= Categoria::all();
         //dd($arts, $cates);
     	return view ('articulos.mostrarTodos', compact ('arts', 'cates'));

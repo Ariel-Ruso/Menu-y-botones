@@ -126,29 +126,6 @@
             </ul>
             <!-- Links -->
 
-            <nav class="navbar navbar-light float-right">
-                <form   class="form-inline"
-                        action="{{ route('buscaPor') }}"
-                        >
-                    <input  name="buscarPorNombre" 
-                            class="form-control mr-sm-2" 
-                            type="search" 
-                            placeholder="Buscar por nombre" 
-                            aria-label="Search"
-                        >
-                    <input  name="buscarPorApellido" 
-                            class="form-control mr-sm-2" 
-                            type="search" 
-                            placeholder="Buscar por apellido" 
-                            aria-label="Search"
-                        >
-                    <button class="btn btn-outline-success my-2 my-sm-0" 
-                            type="submit" 
-                            >
-                                Buscar
-                    </button>
-                </form>
-            </nav>
         </div>
         <!-- Collapsible content -->
 

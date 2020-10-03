@@ -10,6 +10,10 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <span>Usuario # {{$users-> id }}</span>
+                    <a  href="{{ route('mostrarTodos')}}" 
+                        class="btn btn-primary btn-sm">
+                          Volver ...
+                    </a>
                 </div>
 
                 <div class="card-body">     

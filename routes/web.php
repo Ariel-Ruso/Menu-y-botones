@@ -37,6 +37,8 @@ Route::get ('articulos/editar_articulo/{id}', 'articuloController@editar_articul
 
 Route::put ('articulos/editar/{id}', 'articuloController@actualizar_articulo')->name('actualizar_articulo');
 
+Route::get ('articulos/buscaPorAr', 'articuloController@buscaPorAr')->name('buscaPorAr');
+
 
 //abm user
 

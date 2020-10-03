@@ -9,6 +9,51 @@
   </div>
 @endif
 
+<div class="container" name="busqueda">
+  <nav class="navbar navbar-light float-right">
+      <form   class="form-inline"
+              action="{{ route('buscaPorAr') }}"
+              >
+          <select class="form-control" 
+                  id="inlineFormCustomSelect" 
+                  name= "categorias_id">
+                      <option selected>
+                            Categorias...
+                      </option>
+                      @foreach($cates as $item)
+                        <option value= "{{$item->id}}" >
+                          {{ $item->nombre }}
+                        </option>
+                      @endforeach
+          </select>
+          <select class="form-control" 
+                  id="select_busq" 
+                  name= "tipo">
+                    <option selected>
+                      Busca por
+                    </option>
+                    <option value="nombre">Nombre</option>
+                    
+                    <option value="cantidad">Cantidad</option>
+                    <option value="precio">Precio</option>
+          </select>
+          
+          
+          <input  name="buscarPor" 
+                  class="form-control mr-sm-2" 
+                  type="search" 
+                  placeholder="Texto" 
+                  aria-label="Search"
+                  >
+          <button class="btn btn-outline-success my-2 my-sm-0" 
+                  type="submit" 
+                  >
+                     Buscar
+            </button>
+      </form>
+  </nav><br><br>
+</div>
+
 <form>
   <br><br>
   <table class="table">
@@ -59,16 +104,13 @@
                         Eliminar         
               </button>
           </form>
-
         </td>
       </tr>
       <tr>
     @endforeach
-
-      
   </tbody>
 </table>
 
 </form>
-
+{{ $arts->links() }}
 @endsection
