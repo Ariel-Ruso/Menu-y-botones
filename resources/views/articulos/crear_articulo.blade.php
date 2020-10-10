@@ -80,8 +80,30 @@
                             @endforeach
                           </select>
                           <br>
-                          <form>
+                        </div>
+                      </div>       
+
+                      <div class="form-row align-items-center">
+                        <div class="col-auto my-1">
+                          <select class="custom-select mr-sm-2" 
+                                  id="inlineFormCustomSelect" 
+                                  name= "proveedors_id">
+                            <option selected>
+                              Proveedores...
+                            </option>
+                            @foreach($proves as $item2)
+                              <option value= "{{$item2->id}}" >
+                                 {{ $item2->nombre }}
+                              </option>
+                            @endforeach
+                          </select>
+                          <br>
+                        </div>
+                      </div>     
+
+                      <!-- <form>
                             <br>
+                          
                             <div class="form-group">
                               <label for="exampleFormControlFile1">
                                   Seleccione imagen
@@ -91,9 +113,9 @@
                                       id="imagen"
                                       name= "imagen">
                                       
-                            </div>
-                          </form>
-                      </div>                               
+                            </div> 
+                          </form>-->
+                                            
                     <button class="btn btn-primary btn-block" 
                             type="submit">
                       Agregar

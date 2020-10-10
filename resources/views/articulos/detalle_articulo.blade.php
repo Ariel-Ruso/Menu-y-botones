@@ -10,6 +10,10 @@
     				<span>
                         <h2>Detalles de Articulo<h2>
                     </span>
+					<a  href="{{ route('mostrarTodos')}}" 
+                        class="btn btn-primary btn-sm">
+                          Volver ...
+                    </a>
 				</div>
 				<div class="card-body">    
 
@@ -19,6 +23,9 @@
 				 Precio: {{ $art->precio }} <br>
 				 <!-- traigo nombre de rol desde user -->
 				 Categoria: {{ $cates[ ($art->categorias_id)-1 ]->nombre }} <br>
+				 <!-- traigo nombre de provee desde user -->
+				 Proveedor: {{ $proves[ ($art->proveedors_id)-1 ]->nombre }} 
+				 <br>
 
 				</div>
 			</div>

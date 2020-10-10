@@ -10,6 +10,11 @@ class Articulo extends Model
         //articulo pertenece a una Categoria
         return $this->belongsTo (Categoria::class); 
     }
+    
+    public function proveedor(){
+        //articulo pertenece a un Proveedor
+        return $this->belongsTo (Proveedor::class); 
+    }
 
   /*  public function scopeNombre($query, $nombre){
 
@@ -24,17 +29,13 @@ class Articulo extends Model
     		return $query->where($tipo,'like',"%$buscar%");
     	}
     } 
-/* 
-    public function scopeBuscarpor($query, $cates, $tipo, $buscar) {
-        dd($cates);
-    	if( ($cates) ) {
-
-    		return $query->where($cates->id,'like',"%$buscar%");
-        }
-        elseif( ($tipo) && ($buscar) ){
-            return $query->where($tipo,'like',"%$buscar%");
+ 
+    public function scopeBuscarporCate($query, $categoria) {
+        //dd($cates);
+    	if($categoria) {
+    		return $query->where('categorias_id','like',"$categoria");
         }
     } 
- */
+ 
 
 }

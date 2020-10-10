@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Imagen;
+use App\Proveedor;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
 
-class ImagenController extends Controller
+class ProveedorController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function storage_link()
+    public function index()
     {
-        return Artisan::call('storage:link');
+        //
     }
 
     /**
@@ -23,26 +22,29 @@ class ImagenController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function crear()
+    public function create()
     {
         //
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-        if ($request-> hasFile('image')){
-            $path= $request->image->store('public');
-            Imagen::crear (['path=> $path']);
-        }
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Imagen  $imagen
+     * @param  \App\Proveedor  $proveedor
      * @return \Illuminate\Http\Response
      */
-    public function show(Imagen $imagen)
+    public function show(Proveedor $proveedor)
     {
         //
     }
@@ -50,10 +52,10 @@ class ImagenController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Imagen  $imagen
+     * @param  \App\Proveedor  $proveedor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Imagen $imagen)
+    public function edit(Proveedor $proveedor)
     {
         //
     }
@@ -62,10 +64,10 @@ class ImagenController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Imagen  $imagen
+     * @param  \App\Proveedor  $proveedor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Imagen $imagen)
+    public function update(Request $request, Proveedor $proveedor)
     {
         //
     }
@@ -73,10 +75,10 @@ class ImagenController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Imagen  $imagen
+     * @param  \App\Proveedor  $proveedor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Imagen $imagen)
+    public function destroy(Proveedor $proveedor)
     {
         //
     }

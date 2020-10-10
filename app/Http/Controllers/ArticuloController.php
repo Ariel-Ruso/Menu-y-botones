@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Articulo;
 use App\Categoria;
+use App\Proveedor;
 use Illuminate\Http\Request;
 
 class ArticuloController extends Controller
@@ -14,17 +15,30 @@ class ArticuloController extends Controller
         $buscar= $request->get('buscarPor');  
         $tipo= $request->get('tipo');  
         $cates= Categoria::all();
-        
+        $proves= Proveedor::all();
         //invoco funcion scopeNombre
         $arts= Articulo::buscarPor($tipo, $buscar)->paginate(5);
         //$arts= Articulo::where($categorias->id,'like',"1")->paginate(5);
-        return view ('articulos.mostrarTodos', compact ('arts', 'cates'));
+        return view ('articulos.mostrarTodos', compact ('arts', 'cates', 'proves'));
+    }
+
+    public function mostrarxCate (Request $request){
+        
+        $cates_id= $request->get('categorias');
+        //dd($nombre);
+        //$arts= Articulo::paginate(5);
+        $arts= Articulo::BuscarporCate($cates_id)->paginate(5);
+        $proves= Proveedor::all();
+        $cates= Categoria::all();
+        //dd($arts, $cates);
+    	return view ('articulos.mostrarTodos', compact ('arts', 'cates', 'proves'));
     }
 
     public function crear_articulo(){
         //$cates= new Categorias;
         $cates= Categoria::all();
-        return view ('articulos.crear_articulo', compact ('cates'));
+        $proves= Proveedor::all();
+        return view ('articulos.crear_articulo', compact ('cates', 'proves'));
     }
 
     public function crear_articulo2 (Request $request){
@@ -37,14 +51,16 @@ class ArticuloController extends Controller
             'cantidad' => 'required',
             'precio' => 'required',
             'categorias_id' => 'required',
+            'proveedors_id' => 'required',
         ]);
       
-        $cate = new Articulo;
-        $cate->nombre = $request->nombre;
-        $cate->cantidad = $request->cantidad;
-        $cate->precio = $request->precio;
-        $cate->categorias_id = $request->categorias_id;
-        $cate->save();
+        $art = new Articulo;
+        $art->nombre = $request->nombre;
+        $art->cantidad = $request->cantidad;
+        $art->precio = $request->precio;
+        $art->categorias_id = $request->categorias_id;
+        $art->proveedors_id = $request->proveedors_id;
+        $art->save();
         return back()->with('mensaje', 'Articulo agregado correctamente');
         
     }
@@ -52,17 +68,20 @@ class ArticuloController extends Controller
     public function mostrarTodos (){
        
         //$arts= Articulo::paginate(5);
-        $arts= Articulo::paginate(5);
+        $arts= Articulo::paginate(15);
         $cates= Categoria::all();
+        $proves= Proveedor::all();
         //dd($arts, $cates);
-    	return view ('articulos.mostrarTodos', compact ('arts', 'cates'));
+    	return view ('articulos.mostrarTodos', compact ('arts', 'cates', 'proves'));
     }
+
 
     public function detalle_articulo($id){
 
         $art= Articulo::FindOrFail($id);
         $cates= Categoria::all();        
-        return view ('articulos.detalle_articulo', compact('art','cates'));
+        $proves= Proveedor::all();
+        return view ('articulos.detalle_articulo', compact('art','cates', 'proves'));
     
     }  
 

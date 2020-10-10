@@ -11,21 +11,33 @@
 
 <div class="container" name="busqueda">
   <nav class="navbar navbar-light float-right">
-      <form   class="form-inline"
-              action="{{ route('buscaPorAr') }}"
+
+    <form   class="form-inline"
+              action="{{ route('mostrarxCate') }}"
+              
               >
-          <select class="form-control" 
+              <select class="form-control" 
                   id="inlineFormCustomSelect" 
-                  name= "categorias_id">
+                  name= "categorias">
                       <option selected>
                             Categorias...
                       </option>
                       @foreach($cates as $item)
-                        <option value= "{{$item->id}}" >
+                        <option value= "{{ $item->id }}" >
                           {{ $item->nombre }}
                         </option>
                       @endforeach
           </select>
+        <button class="btn btn-outline-success my-2 my-sm-0" 
+                  type="submit" 
+                  >
+                  Buscar
+        </button>
+    </form>
+
+    <form   class="form-inline"
+              action="{{ route('buscaPorAr') }}"
+              >
           <select class="form-control" 
                   id="select_busq" 
                   name= "tipo">
@@ -33,12 +45,9 @@
                       Busca por
                     </option>
                     <option value="nombre">Nombre</option>
-                    
                     <option value="cantidad">Cantidad</option>
                     <option value="precio">Precio</option>
           </select>
-          
-          
           <input  name="buscarPor" 
                   class="form-control mr-sm-2" 
                   type="search" 
@@ -51,6 +60,7 @@
                      Buscar
             </button>
       </form>
+      
   </nav><br><br>
 </div>
 
@@ -64,6 +74,7 @@
         <th scope="col">Cantidad</th>
         <th scope="col">Precio</th>
         <th scope="col">Categoria</th>
+        <th scope="col">Proveedor</th>
         <th scope="col">Acciones</th>
       </tr>
     </thead>
@@ -87,7 +98,9 @@
         </td>
         <td>
           {{ $cates[ ($item->categorias_id)-1 ]->nombre }}
-          
+        </td>
+        <td>
+          {{ $proves[ ($item->proveedors_id)-1 ]->nombre }}
         </td>
         <td>
           <a  href="{{ route ('editar_articulo', $item) }}" 

@@ -13,19 +13,44 @@ class CategoriaSeeder extends Seeder
     public function run()
     {
         $cate= new Categoria();
-        $cate->nombre= "Electronica";
+        $cate->nombre= "Colchones";
         $cate->save();
 
         $cate= new Categoria();
-        $cate->nombre= "Casa y Jardin";
+        $cate->nombre= "Pequeños Electrodomesticos";
         $cate->save();
 
         $cate= new Categoria();
-        $cate->nombre= "Ropa y Calzado";
+        $cate->nombre= "Sonido";
         $cate->save();
 
         $cate= new Categoria();
-        $cate->nombre= "Salud y Belleza";
+        $cate->nombre= "Celulares";
+        $cate->save();
+
+        $cate= new Categoria();
+        $cate->nombre= "Lavarropas";
+        $cate->save();
+
+        $cate= new Categoria();
+        $cate->nombre= "Calefaccion";
+        $cate->save();
+
+        $cate= new Categoria();
+        $cate->nombre= "Heladeras";
+        $cate->save();
+
+        $cate= new Categoria();
+        $cate->nombre= "Led";
+        $cate->save();
+
+
+        $cate= new Categoria();
+        $cate->nombre= "Rodados";
+        $cate->save();
+
+        $cate= new Categoria();
+        $cate->nombre= "Mesas";
         $cate->save();
     }
 }

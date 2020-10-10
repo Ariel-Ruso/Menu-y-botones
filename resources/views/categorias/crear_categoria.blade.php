@@ -13,6 +13,7 @@
                     <a href="{{route('bienvenidos')}}" class="btn btn-primary btn-sm">
                         Volver ...
                     </a>
+                
                 </div>
                 <div class="card-body">     
                   @if ( session('mensaje') )

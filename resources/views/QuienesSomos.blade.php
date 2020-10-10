@@ -4,9 +4,10 @@
 
 <h1 align= "center">
      
-     <img    src="/storage/images/pato.jpg" 
-                        width="180" 
-                        height="180" 
+<!-- https://www.youtube.com/watch?v=tDgFOKvQajg&ab_channel=Aprendible -->
+     <img    src="/storage/images/clientes.jpg" 
+                        width="580" 
+                        height="580" 
                         alt="" 
                         loading="lazy" >
 </h1>

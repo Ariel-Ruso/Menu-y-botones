@@ -1,7 +1,7 @@
 @extends ('layouts.app') 
 @section ('title', 'Mostrar usuarios')
 @section ('contents')
-<h1 align="center"> Usuarios Disponibles</h1>
+<h1 align="center"> Usuarios Existentes</h1>
 
 @if (session('mensaje'))
   <div class="alert alert-success">

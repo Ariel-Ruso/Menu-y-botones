@@ -8,8 +8,9 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <span>Agregar Usuario</span>
-                    <a href="{{ route('bienvenidos')}}" class="btn btn-primary btn-sm">
-                        Volver ...
+                    <a  href="{{ route('bienvenidos')}}" 
+                        class="btn btn-primary btn-sm">
+                          Volver ...
                     </a>
                 </div>
                 <div class="card-body">     

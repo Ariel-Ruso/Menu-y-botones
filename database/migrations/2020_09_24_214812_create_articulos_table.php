@@ -22,6 +22,10 @@ class CreateArticulosTable extends Migration
                     ->references('id')
                     ->on('categorias')
                     ->onDelete('cascade');
+            $table->foreignId('proveedors_id')
+                    ->references('id')
+                    ->on('proveedors')
+                    ->onDelete('cascade');        
             $table->timestamps();
         });
     }
